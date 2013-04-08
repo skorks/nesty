@@ -2,7 +2,7 @@
 
 Nested exception support for Ruby.
 
-Now, when you rescue an error and raise our own, you don't have to lose track of what actually occured, you can keep nest the old error in your own and the stacktrace will reflect the cause of the original error.
+Now, when you rescue an error and raise your own, you don't have to lose track of what actually occured, you can keep/nest the old error in your own and the stacktrace will reflect the cause of the original error.
 
 ## Why Use It?
 
