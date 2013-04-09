@@ -1,8 +1,6 @@
 # Nesty
 
-Nested exception support for Ruby.
-
-Now, when you rescue an error and raise your own, you don't have to lose track of what actually occured, you can keep/nest the old error in your own and the stacktrace will reflect the cause of the original error.
+Now, when you rescue an error and then re-raise your own, you don't have to lose track of what actually occured, you can keep/nest the old error in your own and the stacktrace will reflect the cause of the original error.
 
 ## Why Use It?
 
@@ -79,7 +77,7 @@ B - message: 'b', backtrace: ['4', '3', '2', '1']
 C - message: 'c', backtrace: ['6', '5', '4', '3', '2', '1']
 ```
 
-If C was not nested and we allowed it to bubble up so that it gets dumped to standard output, we would see the following:
+If C was not nested and we allowed it to bubble up so that it gets dumped to standard output, we would see something like the following:
 
 ```
 c
