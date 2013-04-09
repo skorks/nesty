@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/skorks/nesty.png?branch=master)](https://travis-ci.org/skorks/nesty)
+
 # Nesty
 
 Now, when you rescue an error and then re-raise your own, you don't have to lose track of what actually occured, you can keep/nest the old error in your own and the stacktrace will reflect the cause of the original error.
