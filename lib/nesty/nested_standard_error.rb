@@ -1,5 +1,5 @@
 module Nesty
-  class NestedStandardError
+  class NestedStandardError < StandardError
     include NestedError
   end
 end
