@@ -11,7 +11,7 @@ module Nesty
       @raw_backtrace = backtrace
       if nested
         backtrace = backtrace - nested_raw_backtrace
-        backtrace += ["#{nested.backtrace.first}: #{nested.message}"]
+        backtrace += ["#{nested.backtrace.first}: #{nested.message} (#{nested.class.name})"]
         backtrace += nested.backtrace[1..-1] || []
       end
       super(backtrace)

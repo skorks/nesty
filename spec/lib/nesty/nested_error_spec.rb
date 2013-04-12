@@ -59,7 +59,7 @@ describe Nesty::NestedError do
         it {subject.message.should == 'hello'}
         it {subject.backtrace.size.should == 3}
         it {subject.backtrace[0].should == 'x'}
-        it {subject.backtrace[1].should == "a: #{nested_message}"}
+        it {subject.backtrace[1].should == "a: #{nested_message} (StandardError)"}
         it {subject.backtrace[2].should == 'b'}
       end
 
@@ -81,7 +81,7 @@ describe Nesty::NestedError do
         it {subject.message.should == 'hello'}
         it {subject.backtrace.size.should == 3}
         it {subject.backtrace[0].should == 'x'}
-        it {subject.backtrace[1].should == "a: #{nested_message}"}
+        it {subject.backtrace[1].should == "a: #{nested_message} (StandardError)"}
         it {subject.backtrace[2].should == 'b'}
       end
     end
@@ -113,9 +113,9 @@ describe Nesty::NestedError do
       it {subject.backtrace.size.should == 6}
       it {subject.backtrace[0].should == 'w'}
       it {subject.backtrace[1].should == 'x'}
-      it {subject.backtrace[2].should == "y: #{nested_message}"}
+      it {subject.backtrace[2].should == "y: #{nested_message} (TestError)"}
       it {subject.backtrace[3].should == 'z'}
-      it {subject.backtrace[4].should == "a: #{nested_nested_message}"}
+      it {subject.backtrace[4].should == "a: #{nested_nested_message} (StandardError)"}
       it {subject.backtrace[5].should == 'b'}
     end
   end
