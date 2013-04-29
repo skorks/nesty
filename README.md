@@ -35,13 +35,12 @@ end
 Alternatively rather than inheriting from `StandardError` do this:
 
 ```ruby
-class HappyError < Nesty::NestedStandardError
-end
+HappyError = Class.new(Nesty::NestedStandardError)
 ```
 
-Instances of `HappyError`, will now support nesting another error inside.
+Instances of `HappyError` will now support nesting another error inside.
 
-Here is how we can use this.
+Here is how we can use this:
 
 ```ruby
 begin
@@ -63,7 +62,7 @@ end
 
 This is the implicit way, the `HappyError` instance will still nest the `StandardError` that was rescued.
 
-You can of course go deeper and keep rescuing and raising your own errors. As long as you raise with instances that support nesting (e.g. ones that include `Nesty::NestedError` or inherit from `Nesty::NestedStandardError`), the stack trace will include all the nested exception messages.
+You can of course go deeper and keep rescuing and raising your own errors. As long as you raise with instances that support nesting (e.g. ones that include `Nesty::NestedError` or inherit from `Nesty::NestedStandardError`), the stacktrace will include all the nested exception messages.
 
 ### What The Stacktrace Will Look Like?
 
@@ -103,7 +102,7 @@ c
 1
 ```
 
-Since a stacktrace for a nested error is always a subset of the stacktrace of the enclosing error, all we need do is add the messages for each of our nested errors in the appropriate place in the stacktrace. Simple, but handy.
+Since a stacktrace for a nested error is always a subset of the stacktrace of the enclosing error, all we need to do is add the messages for each of our nested errors in the appropriate place in the stacktrace. Simple, but handy.
 
 ## Contributing
 
